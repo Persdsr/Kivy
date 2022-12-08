@@ -1,0 +1,65 @@
+
+
+<Container>:
+
+    canvas:
+        Color:
+            rgba: .1, .3, .5, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    login: login
+    password1: password1
+    password2: password2
+    button: button
+
+    FloatLayout:
+        canvas:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        MDLabel:
+            text: 'gfd'
+
+
+    FloatLayout:
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        size_hint: .5, .5
+
+        canvas:
+            Color:
+                rgba: .65, .3, .3, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        MDTextField:
+            id: login
+            size_hint: .6, .2
+            pos_hint: {'center_x': .5, 'center_y': .7}
+            hint_text: 'Логин'
+            max_text_length: 10
+
+        MDTextField:
+            id: password1
+            size_hint: .6, .2
+            pos_hint: {'center_x': .5, 'center_y': .55}
+            hint_text: 'Пароль'
+
+            line_color_focus: 1, 0, 1, 1
+
+        MDTextField:
+            id: password2
+            size_hint: .6, .2
+            pos_hint: {'center_x': .5, 'center_y': .4}
+            hint_text: 'Повтор пароля'
+
+        MDRaisedButton:
+            id: button
+            text: 'Go'
+            pos_hint: {'center_x': .5, 'center_y': .2}
+            size_hint: .8, .15
+            on_release:
+                root.auth()
